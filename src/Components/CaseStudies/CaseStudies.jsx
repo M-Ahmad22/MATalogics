@@ -11,7 +11,7 @@ import PortFolioFullImg from "../../assets/PortFolioFullImg.jpg";
 import LaptopLayeredImg from "../../assets/CRMLaptopLayeredImg.png";
 import CRMSpecialLayeredImg from "../../assets/CRMSpecialLayeredImg.png";
 import ECommerceSpecialLayeredImg from "../../assets/ECommerceSpecialLayeredImg.png";
-import ArrowUp from "../../Assets/Arrow-up-rightGray.svg";
+import ArrowUp from "../../assets/Arrow-up-rightGray.svg";
 import checkSign from "../../assets/checkSign.svg";
 
 const portfolioProjects = [

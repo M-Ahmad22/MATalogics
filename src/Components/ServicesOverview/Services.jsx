@@ -16,7 +16,7 @@ import ServiceHoverImgTwo from "../../assets/ServiceTwoOrg.jpg";
 import ServiceHoverImgThree from "../../assets/ServiceThreeOrg.jpg";
 import ServiceHoverImgFour from "../../assets/ServiceFourOrg.jpg";
 import ServiceHoverImgFive from "../../assets/ServiceFiveOrg.jpg";
-import ArrowUp from "../../Assets/arrow-up-rightS.svg";
+import ArrowUp from "../../assets/arrow-up-rightS.svg";
 import ArrowUpWhite from "../../assets/arrow-up-right.svg";
 
 const services = [

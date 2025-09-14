@@ -1,5 +1,5 @@
 import React from "react";
-import MapLayer from "../../Assets/MapLayer.png";
+import MapLayer from "../../assets/MapLayer.png";
 
 const Map = () => {
   return (
