@@ -5,7 +5,6 @@ import PortfolioLayeredImg from "../../assets/PortfolioLayeredImg.png";
 import SaasLayeredImg from "../../assets/SaasLayeredImg.png";
 import EduLayeredImg from "../../assets/EduLayeredImg.png";
 import CRMLayeredImg from "../../assets/CRMLayeredImg.png";
-import ArrowUpWhite from "../../assets/arrow-up-right.svg";
 import ECommerceFullImg from "../../assets/ECommerceFullImg.png";
 import AIChatBotFullIImg from "../../assets/AIChatBotFullIImg.png";
 import PortFolioFullImg from "../../assets/PortFolioFullImg.jpg";

@@ -9,7 +9,6 @@ import PortfolioLayeredImg from "../../assets/PortfolioLayeredImg.png";
 import SaasLayeredImg from "../../assets/SaasLayeredImg.png";
 import EduLayeredImg from "../../assets/EduLayeredImg.png";
 import CRMLayeredImg from "../../assets/CRMLayeredImg.png";
-import ArrowUpWhite from "../../assets/arrow-up-right.svg";
 import ECommerceFullImg from "../../assets/ECommerceFullImg.png";
 import AIChatBotFullIImg from "../../assets/AIChatBotFullIImg.png";
 import PortFolioFullImg from "../../assets/PortFolioFullImg.jpg";
@@ -148,16 +147,6 @@ const Portfolio = () => {
         </div>
 
         <div className="h-[auto] w-[72%] flex flex-col relative justify-center items-center my-[60px] mobile:w-full">
-          <div className="PortfolioTitle gap-[8px] h-auto w-[100%] flex flex-col justify-center items-center ">
-            <h1 className="font-[Outfit] text-[48px] not-italic font-bold leading-[60px] tracking-[-0.56px] capitalize text-[#1E1D28] mb-3 ml-3 ">
-              <span className="text-[#0045E6]">Our</span> Portfolio
-            </h1>
-            <h3 className="font-outfit text-[18px] font-normal leading-[29px] tracking-[0px] ml-3 w-[714px] text-center mobile:w-[95%] mobile:ml-0">
-              Explore how MATalogics has helped brands grow with digital
-              transformation, intelligent systems, and powerful user
-              experiences.
-            </h3>
-          </div>
           <div className="w-[90%] h-auto flex flex-col justify-center items-center  ">
             <div className="ServicesCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full px-1 py-[60px] mx-1 mobile:mx-0 mobile:px-0">
               {portfolioProjects.map((portfolioProjects, index) => (
