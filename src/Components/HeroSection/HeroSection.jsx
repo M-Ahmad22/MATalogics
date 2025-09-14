@@ -32,7 +32,7 @@ const HeroSection = () => {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-10 mobile:object-fill"
-        preload="none"
+        preload="metadata"
         poster="../../../public/Videos/poster.jpg"
       >
         {/* <source src={WhyUsVideo} type="video/mp4" /> */}
