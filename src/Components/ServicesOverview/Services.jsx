@@ -8,7 +8,7 @@ import ServiceFive from "../../assets/ServiceFive.svg";
 import MainLogo from "../../assets/logoWhite.png";
 import ServiceOneMainImg from "../../assets/ServiceOnelayered.png";
 import ServiceTwoMainImg from "../../assets/ServiceTwoLayered.png";
-import ServiceThreeMainImg from "../../assets/ServiceThreelayered.png";
+import ServiceThreeMainImg from "../../assets/ServiceThreeLayered.png";
 import ServiceFourMainImg from "../../assets/ServiceFourlayered.png";
 import ServiceFiveMainImg from "../../assets/ServiceFivelayered.png";
 import ServiceHoverImgOne from "../../assets/ServiceOneOrg.png";
