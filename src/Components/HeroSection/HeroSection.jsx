@@ -33,7 +33,7 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-10 mobile:object-fill"
         preload="none"
-        poster="/assets/Videos/WhyUsPoster.jpg"
+        poster="../../assets/poster.jpg"
       >
         {/* <source src={WhyUsVideo} type="video/mp4" /> */}
         <source src="/Videos/HeroSectionWebM.webm" type="video/webm" />
