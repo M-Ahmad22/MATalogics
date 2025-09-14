@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowUp from "../../Assets/arrow-up-rightS.svg";
+import ArrowUp from "../../assets/arrow-up-rightS.svg";
 import WhyUsVideo from "../../assets/Videos/Info_Tech.mp4";
 const WhyUs = () => {
   return (
