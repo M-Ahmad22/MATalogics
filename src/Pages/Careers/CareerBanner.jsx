@@ -1,9 +1,7 @@
 import React from "react";
-import Banner from "../../Assets/ContactBanner.jpg";
 import Abstract_Wave_1920x1080 from "../../assets/Abstract_Wave_1920x1080.mp4";
 import SearchFrame from "../../assets/SearchFrame.svg";
 import LocationFrame from "../../assets/LocationFrame.svg";
-import Categoriesframe from "../../assets/Categoriesframe.svg";
 import ArrowDropDown from "../../assets/ArrowDropDown.svg";
 
 const CareerBanner = () => (
