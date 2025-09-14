@@ -1,0 +1,23 @@
+<svg width="85" height="69" viewBox="0 0 85 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_107_5901)">
+<path d="M1.8855 65.66H82.8835M9.52829 38.0245H20.4326V65.66H9.52829V38.0245ZM27.7976 27.2627H38.7019V65.66H27.7976V27.2627ZM46.0671 37.9408H56.9714V65.6602H46.0671V37.9408Z" stroke="url(#paint0_linear_107_5901)" stroke-width="2.82346" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.9812 30.8533C17.3646 30.8533 19.2967 28.9046 19.2967 26.5009C19.2967 24.0971 17.3646 22.1484 14.9812 22.1484C12.5979 22.1484 10.6658 24.0971 10.6658 26.5009C10.6658 28.9046 12.5979 30.8533 14.9812 30.8533Z" stroke="white" stroke-width="2.82346" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M33.2493 16.4505C35.6326 16.4505 37.5647 14.5018 37.5647 12.098C37.5647 9.69425 35.6326 7.74561 33.2493 7.74561C30.8659 7.74561 28.9338 9.69425 28.9338 12.098C28.9338 14.5018 30.8659 16.4505 33.2493 16.4505Z" stroke="white" stroke-width="2.82346" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M51.5174 30.7801C53.9007 30.7801 55.8328 28.8314 55.8328 26.4276C55.8328 24.0238 53.9007 22.0752 51.5174 22.0752C49.134 22.0752 47.2019 24.0238 47.2019 26.4276C47.2019 28.8314 49.134 30.7801 51.5174 30.7801Z" stroke="white" stroke-width="2.82346" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69.7884 11.7019C72.1717 11.7019 74.1038 9.75328 74.1038 7.3495C74.1038 4.94572 72.1717 2.99707 69.7884 2.99707C67.405 2.99707 65.4729 4.94572 65.4729 7.3495C65.4729 9.75328 67.405 11.7019 69.7884 11.7019Z" stroke="white" stroke-width="2.82346" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.6748 23.1435L29.4782 14.2115M36.656 14.7689L47.7575 23.4766M54.3655 22.6798L66.3517 9.97998M75.2412 38.9893V22.5142H64.3369V65.6598H75.2412V53.933" stroke="url(#paint1_linear_107_5901)" stroke-width="2.82346" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_107_5901" x1="42.3845" y1="27.2627" x2="42.3845" y2="65.6602" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#696A6F"/>
+</linearGradient>
+<linearGradient id="paint1_linear_107_5901" x1="46.958" y1="9.97998" x2="46.958" y2="65.6598" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#696A6F"/>
+</linearGradient>
+<clipPath id="clip0_107_5901">
+<rect width="84.2906" height="68.3438" fill="white" transform="translate(0.240723 0.156738)"/>
+</clipPath>
+</defs>
+</svg>
