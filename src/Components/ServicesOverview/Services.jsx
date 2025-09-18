@@ -157,7 +157,7 @@ const ServicesSection = () => {
                   className="absolute card bottom-0 left-0 w-full flex justify-center
     transform translate-y-0 opacity-0 
     group-hover:translate-y-0 group-hover:opacity-100 
-    transition-all duration-300 ease-in-out inset-0"
+    transition-all duration-300 ease-in-out inset-0 mobile:w-[100%] mobile:mx-0 "
                 >
                   <img
                     src={service.HoverImg}
@@ -166,8 +166,8 @@ const ServicesSection = () => {
                   />
 
                   {/* Overlay background */}
-                  <div className="absolute h-[500px] w-[400px] ">
-                    <div className="absolute left-[2px] h-[490px] w-[389px] mx-1 my-1 bg-[#0045E6]/[0.62] rounded-[17px] mt-[3px] "></div>
+                  <div className="absolute h-[500px] w-[400px] mobile:w-[100%] mobile:mx-0  ">
+                    <div className="absolute left-[2px] h-[490px] w-[389px] mx-1 my-1 bg-[#0045E6]/[0.62] rounded-[17px] mt-[3px] mobile:left-0 mobile:mx-1 mobile:w-[98%]  "></div>
 
                     <div className="absolute top-0 left-0 p-0 z-20">
                       <div className="ServiceLogo w-[78px] h-[78px] bg-[#F5F7F8]/[0.12] flex items-center justify-center border-[0px] rounded-xl mx-[26px] my-9">

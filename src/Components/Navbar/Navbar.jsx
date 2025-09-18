@@ -4,6 +4,7 @@ import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import Logo from "../../assets/logoWhite.png";
 import ArrowUp from "../../assets/arrow-up-right.svg";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isCareersOpen, setIsCareersOpen] = useState(false);
@@ -22,7 +23,12 @@ const Navbar = () => {
     }, 200);
   };
   return (
-    <header className="w-full px-0 py-0 fixed top-0  bg-[#1E1D288C]/55 backdrop-blur-sm shadow-md z-[99999] mobile:w-full ">
+    <motion.header
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+      className="w-full px-0 py-0 fixed top-0  bg-[#1E1D288C]/55 backdrop-blur-sm shadow-md z-[99999] mobile:w-full "
+    >
       <div className="max-w-[full] mx-auto px-[150px] py-[20px] flex items-center justify-between mobile:px-3">
         <div className="text-[36px] font-extrabold text-[#fff] tracking-[-0.7] flex justify-center items-center align-items-center font-manrope">
           <div className="Logo">
@@ -102,7 +108,7 @@ const Navbar = () => {
         <div className="hidden md:block ">
           <Link
             to="/quote"
-            className=" text-white font-semibold text-sm hover:bg-[#252525] transition flex w-[181px] px-[14px] py-[15px] justify-center items-center gap-[6px] flex-shrink-0 rounded-[66px] bg-[#0045e6] "
+            className=" text-white font-semibold text-sm hover:bg-[#252525]/[0.55] transition flex w-[181px] px-[14px] py-[15px] justify-center items-center gap-[6px] flex-shrink-0 rounded-[66px] bg-[#0045e6] "
           >
             Get a Quote
             <img src={ArrowUp} alt="" />
@@ -209,7 +215,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
 
