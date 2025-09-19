@@ -68,8 +68,7 @@ const HeroSection = () => {
           <motion.h1
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 1.1, ease: "easeOut", delay: 0.2 }}
             className="text-4xl font-bold leading-[1.2] sm:leading-[1.4] gap-4 text-[48px] mobile:text-[32px] mobile:text-center mobile:leading-[45px] mobile:w-full"
           >
             Strategic Innovation, Logically Engineered the MATalogics Way
@@ -148,7 +147,7 @@ const HeroSection = () => {
                 {InfoInView && (
                   <CountUp
                     start={0}
-                    end={100}
+                    end={120}
                     duration={3}
                     easingFn={easeOutCubic}
                   />
@@ -183,7 +182,7 @@ const HeroSection = () => {
                 {InfoInView && (
                   <CountUp
                     start={0}
-                    end={120}
+                    end={90}
                     duration={3}
                     easingFn={easeOutCubic}
                   />

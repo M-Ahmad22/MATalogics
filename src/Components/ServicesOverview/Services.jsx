@@ -18,6 +18,7 @@ import ServiceHoverImgFour from "../../assets/ServiceFourOrg.jpg";
 import ServiceHoverImgFive from "../../assets/ServiceFiveOrg.jpg";
 import ArrowUp from "../../assets/arrow-up-rightS.svg";
 import ArrowUpWhite from "../../assets/arrow-up-right.svg";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -69,6 +70,13 @@ const services = [
   },
 ];
 
+const handleScrollToPricing = () => {
+  const section = document.getElementById("RequestPricing");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const ServicesSection = () => {
   return (
     <section
@@ -77,23 +85,47 @@ const ServicesSection = () => {
     >
       <div className="h-[auto] w-[72%] flex flex-col relative mobile:w-[90%]">
         <div className="ServicesTitle align-content-start gap-[8px] h-auto w-[92%] ">
-          <h1 className="font-[Outfit] text-[48px] not-italic font-semibold leading-[60px] tracking-[-0.96px] capitalize text-[#1E1D28] mb-3 ml-3">
+          <motion.h1
+            initial={{ opacity: 0, x: -150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="font-[Outfit] text-[48px] not-italic font-semibold leading-[60px] tracking-[-0.96px] capitalize text-[#1E1D28] mb-3 ml-3"
+          >
             Services We <span className="text-[#0045E6]">Provide</span>
-          </h1>
-          <h3 className="font-Montserrat text-[17px] font-normal leading-[24px] tracking-[0.96px] ml-3 ">
+          </motion.h1>
+          <motion.h3
+            initial={{ opacity: 0, x: -150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="font-Montserrat text-[17px] font-normal leading-[24px] tracking-[0.96px] ml-3 "
+          >
             From ideation to deployment MATalogics delivers smart, scalable, and
             secure solutions tailored to your digital goals.
-          </h3>
-          <button className="absolute right-2 top-4 w-[202px] h-[62px] flex justify-center items-center gap-[6px] bg-[#0045E6] text-[white] border-[1px] text-[16px] font-medium rounded-full  leading-[150px] mobile:top-[250px] mobile:right-[0px]">
+          </motion.h3>
+          <motion.button
+            initial={{ opacity: 0, x: 150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="absolute right-2 top-4 w-[202px] h-[62px] flex justify-center items-center gap-[6px] bg-[#0045E6] text-[white] border-[1px] text-[16px] font-medium rounded-full  leading-[150px] mobile:top-[250px] mobile:right-[0px]"
+          >
             <img
               src={GreenComponent}
               alt=""
               className="pb-0 px-1 animate-blink"
             />
             <span className="px-1 mr-1"> Request Pricing</span>
-          </button>
+          </motion.button>
         </div>
-        <div className="ServicesCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full px-1 py-[60px] mx-1 mobile:mx-0 mobile:px-0 mobile:mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="ServicesCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full px-1 py-[60px] mx-1 mobile:mx-0 mobile:px-0 mobile:mt-12"
+        >
           {services.map((service, index) => {
             const isLastCard = index === services.length - 1;
             if (isLastCard) {
@@ -126,7 +158,10 @@ const ServicesSection = () => {
                group-hover:translate-y-0 group-hover:opacity-100 
                transition-all duration-500 ease-in-out"
                   >
-                    <button className="w-[286px] h-[48px] flex justify-center items-center bg-white border-1 border-[#fff] rounded-full text-[#000] font-outfit text-[18px] font-semibold mt-6 ">
+                    <button
+                      onClick={handleScrollToPricing}
+                      className="w-[286px] h-[48px] flex justify-center items-center bg-white border-1 border-[#fff] rounded-full text-[#000] font-outfit text-[18px] font-semibold mt-6 "
+                    >
                       Let's discuss Your Project
                       <img src={ArrowUp} alt="" className="mx-2" />
                     </button>
@@ -194,7 +229,7 @@ const ServicesSection = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
