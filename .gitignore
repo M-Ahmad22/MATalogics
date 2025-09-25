@@ -26,3 +26,5 @@ Thumbs.db
 Admin/.env
 Client/.env
 Server/.env
+
+node_modules/
