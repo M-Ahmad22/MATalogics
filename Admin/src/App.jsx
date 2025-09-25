@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import NotFound from "./pages/NotFound.jsx";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import ProtectedRoute from "./Components/ProtectedRoute";
+import NotFound from "./Pages/NotFound";
 
 const App = () => (
   <BrowserRouter>
