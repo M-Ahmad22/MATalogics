@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Header from "@/components/admin/Header";
-import Sidebar from "@/components/admin/Sidebar";
-import InboxView from "@/components/admin/InboxView";
-import DetailView from "@/components/admin/DetailView";
-import Analytics from "@/components/admin/Analytics";
+import Header from "../Components/admin/Header";
+import Sidebar from "../Components/admin/Sidebar";
+import InboxView from "../Components/admin/InboxView";
+import DetailView from "../Components/admin/DetailView";
+import Analytics from "../Components/admin/Analytics";
 import axios from "axios";
-import Register from "@/Components/admin/Register";
+import Register from "../Components/admin/Register";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
