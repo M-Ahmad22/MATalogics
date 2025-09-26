@@ -2,17 +2,20 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 
-// Use /tmp folder for serverless
+// Use /tmp/uploads for serverless
+const uploadPath = "/tmp/uploads";
+
+// Ensure /tmp/uploads exists
+if (!fs.existsSync(uploadPath)) {
+  fs.mkdirSync(uploadPath, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadPath = "/tmp/uploads"; // ✅ Must be /tmp
-    if (!fs.existsSync(uploadPath)) {
-      fs.mkdirSync(uploadPath, { recursive: true });
-    }
     cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
-    cb(null, file.originalname); // Keep original name
+    cb(null, Date.now() + "-" + file.originalname);
   },
 });
 
