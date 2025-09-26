@@ -1,13 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const { getQuote, getAllQuotes } = require("../controllers/getQuoteController");
+const { getQuote, getAllQuotes } = require("../Controllers/getQuoteController");
 const GetQuote = require("../Models/Quote");
 
-// Multer setup
+// Multer setup for serverless
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/");
+    const uploadPath = "/tmp/uploads";
+    const fs = require("fs");
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath, { recursive: true });
+    }
+    cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname);
