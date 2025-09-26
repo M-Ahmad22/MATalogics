@@ -7,6 +7,11 @@ const app = require("./App");
 
 // module.exports = app;
 
-module.exports = (req, res) => {
-  app(req, res);
-};
+// module.exports = (req, res) => {
+//   app(req, res);
+// };
+
+const serverless = require("serverless-http");
+// const app = require("./App");
+
+module.exports = serverless(app);
