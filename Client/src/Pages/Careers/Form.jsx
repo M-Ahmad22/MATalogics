@@ -12,6 +12,7 @@ import { jobs } from "../../Data/jobsData";
 import uploadIcon from "../../assets/uploadIcon.svg";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Form = ({ job: jobFromProps }) => {
   const navigate = useNavigate();
@@ -150,6 +151,27 @@ const Form = ({ job: jobFromProps }) => {
 
   return (
     <>
+      <Helmet>
+        <title>MATalogics | Apply for Job</title>
+        <meta
+          name="description"
+          content="Submit your application to MATalogics for available job openings."
+        />
+        <meta property="og:title" content="MATalogics | Apply for Job" />
+        <meta
+          property="og:description"
+          content="Submit your application to MATalogics for available job openings."
+        />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/apply-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://matalogics.com/careers/apply"
+        />
+      </Helmet>
       <section className="h-auto bg-[#F9F9F9] mobile:w-full mobile:h-auto ">
         <div className="relative w-full h-[430px] ">
           <img

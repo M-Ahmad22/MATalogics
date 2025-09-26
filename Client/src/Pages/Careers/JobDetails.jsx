@@ -7,6 +7,7 @@ import Abstract_Wave_1920x1080 from "../../assets/Abstract_Wave_1920x1080.mp4";
 import arrowleftsmall from "../../assets/arrowleftsmall.svg";
 import arrowUpRightWhite from "../../assets/arrowUpRightWhite.svg";
 import GroupSign from "../../assets/GroupSign.svg";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
   const navigate = useNavigate();
@@ -17,6 +18,24 @@ const JobDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{`MATalogics | ${job?.title || "Job Details"}`}</title>
+        <meta
+          name="description"
+          content={
+            job?.description ||
+            "Detailed information about this job opening at MATalogics."
+          }
+        />
+        <meta property="og:title" content={job?.title || "Job Details"} />
+        <meta property="og:description" content={job?.description || ""} />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/jobs-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+      </Helmet>
       <section className="h-auto bg-[#F9F9F9] mobile:w-full tablet:w-full medium:w-full">
         <div className="relative w-full h-[430px] ">
           <img

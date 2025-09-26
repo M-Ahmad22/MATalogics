@@ -3,6 +3,7 @@ import Abstract_Wave_1920x1080 from "../../assets/Abstract_Wave_1920x1080.mp4";
 import SearchFrame from "../../assets/SearchFrame.svg";
 import LocationFrame from "../../assets/LocationFrame.svg";
 import ArrowDropDown from "../../assets/ArrowDropDown.svg";
+import { Helmet } from "react-helmet-async";
 
 const CareerBanner = ({ onFilterChange }) => {
   // states

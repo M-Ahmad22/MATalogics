@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   bookCall,
   getAllBookings,
-} = require("../controllers/bookCallController");
+} = require("../Controllers/bookCallController");
 const BookCall = require("../Models/BookCall");
 
 router.post("/book-call", bookCall);

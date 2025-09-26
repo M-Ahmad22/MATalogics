@@ -4,11 +4,36 @@ import Map from "../../Components/Map/Map";
 import Abstract_Wave_1920x1080 from "../../assets/Abstract_Wave_1920x1080.mp4";
 import arrowleftsmall from "../../assets/arrowleftsmall.svg";
 import Submitted from "../../assets/Submitted.gif";
+import { Helmet } from "react-helmet-async";
 
 const SuccessPage = () => {
   const navigate = useNavigate();
   return (
     <>
+      <Helmet>
+        <title>MATalogics | Application Submitted</title>
+        <meta
+          name="description"
+          content="Thank you for applying! Your application has been submitted successfully."
+        />
+        <meta
+          property="og:title"
+          content="MATalogics | Application Submitted"
+        />
+        <meta
+          property="og:description"
+          content="Thank you for applying! Your application has been submitted successfully."
+        />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/success-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://matalogics.com/careers/success"
+        />
+      </Helmet>
       <section className="h-auto bg-[#F9F9F9] ">
         <div className="relative w-full h-[430px] ">
           <img

@@ -4,6 +4,7 @@ import Map from "../../Components/Map/Map";
 import uploadIcon from "../../assets/uploadIcon.svg";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const GetAQuote = () => {
   const [fileName, setFileName] = useState("");
@@ -67,6 +68,24 @@ const GetAQuote = () => {
 
   return (
     <>
+      <Helmet>
+        <title>MATalogics | Get A Quote</title>
+        <meta
+          name="description"
+          content="Request a quote from MATalogics for your project or service needs."
+        />
+        <meta property="og:title" content="MATalogics | Get A Quote" />
+        <meta
+          property="og:description"
+          content="Request a quote from MATalogics for your project or service needs."
+        />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/quote-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://matalogics.com/quote" />
+      </Helmet>
       <section className="h-auto bg-[#F9F9F9] ">
         <div className="relative w-full h-[430px] ">
           <img

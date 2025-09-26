@@ -19,6 +19,34 @@ import ServicesDetails from "./Pages/ServicesDetails/ServicesDetails";
 import UseCaseDetails from "./Pages/UseCaseDetails/UseCaseDetails";
 import BlogDetails from "./Pages/BlogsDetails/BlogDetails";
 import PrivacyTerms from "./Pages/Privacy&Policy/PrivacyTerms";
+import usePageViews from "./hooks/usePageViews";
+
+const AppRoutes = () => {
+  usePageViews(); // ✅ now inside Router
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/quote" element={<GetAQuote />} />
+        <Route path="/service" element={<ServicesPage />} />
+        <Route path="/services/:id" element={<ServicesDetails />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/careers/join-us" element={<JoinUs />} />
+        <Route path="/careers/internships" element={<Internships />} />
+        <Route path="/careers/job/:id" element={<JobDetails />} />
+        <Route path="/careers/apply/:id" element={<Form />} />
+        <Route path="/SuccessPage" element={<SuccessPage />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/usecases/:id" element={<UseCaseDetails />} />
+        <Route path="/blogs/:id" element={<BlogDetails />} />
+        <Route path="/Courses" element={<CoursesPage />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/privacy" element={<PrivacyTerms />} />
+      </Routes>
+    </Layout>
+  );
+};
 
 const App = () => {
   useEffect(() => {
@@ -31,27 +59,7 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/quote" element={<GetAQuote />} />
-          <Route path="/service" element={<ServicesPage />} />
-          <Route path="/services/:id" element={<ServicesDetails />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/careers/join-us" element={<JoinUs />} />
-          <Route path="/careers/internships" element={<Internships />} />
-          <Route path="/careers/job/:id" element={<JobDetails />} />
-          <Route path="/careers/apply/:id" element={<Form />} />
-          <Route path="/SuccessPage" element={<SuccessPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/usecases/:id" element={<UseCaseDetails />} />
-          <Route path="/blogs/:id" element={<BlogDetails />} />
-          <Route path="/Courses" element={<CoursesPage />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/privacy" element={<PrivacyTerms />} />
-        </Routes>
-      </Layout>
+      <AppRoutes /> {/* ✅ GA tracking is called here */}
     </Router>
   );
 };

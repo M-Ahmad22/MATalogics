@@ -13,7 +13,7 @@ import InovativeSol from "../../assets/InovativeSol.svg";
 import AboutusImg from "../../assets/AboutusImg.png";
 import AboutBannerImg from "../../assets/AboutBannerImg.png";
 import AboutBannerVideo from "../../assets/AboutBannerVideo.mp4";
-
+import { Helmet } from "react-helmet-async";
 const features = [
   {
     title: "100+ Successful Projects",
@@ -72,6 +72,35 @@ const AboutFeature = [
 const About = () => {
   return (
     <>
+      <Helmet>
+        <title>MATalogics | About Us</title>
+        <meta
+          name="description"
+          content="Learn about MATalogics, our mission, vision, and the team behind our innovative solutions."
+        />
+        <meta property="og:title" content="MATalogics | About Us" />
+        <meta
+          property="og:description"
+          content="Learn about MATalogics, our mission, vision, and the team behind our innovative solutions."
+        />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/about-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://matalogics.com/about" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MATalogics | About Us" />
+        <meta
+          name="twitter:description"
+          content="Learn about MATalogics, our mission, vision, and the team behind our innovative solutions."
+        />
+        <meta
+          name="twitter:image"
+          content="https://matalogics.com/path/to/about-og-image.jpg"
+        />
+      </Helmet>
       <section className="h-auto bg-[#FFF] w-full large:w-[100%]">
         <div className="relative w-full h-[580px] mobile:h-[90vh] tablet:h-[80vh] medium:h-[90vh] ">
           <img

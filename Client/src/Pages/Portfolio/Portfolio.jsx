@@ -20,6 +20,7 @@ import checkSign from "../../assets/checkSign.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { id } from "date-fns/locale";
+import { Helmet } from "react-helmet-async";
 
 {
   /* <Link */
@@ -124,6 +125,35 @@ const portfolioProjects = [
 const Portfolio = () => {
   return (
     <>
+      <Helmet>
+        <title>MATalogics | Portfolio</title>
+        <meta
+          name="description"
+          content="Explore the portfolio of MATalogics showcasing our innovative projects and client success stories."
+        />
+        <meta property="og:title" content="MATalogics | Portfolio" />
+        <meta
+          property="og:description"
+          content="Explore the portfolio of MATalogics showcasing our innovative projects and client success stories."
+        />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/portfolio-og-image.jpg"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://matalogics.com/portfolio" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MATalogics | Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Explore the portfolio of MATalogics showcasing our innovative projects and client success stories."
+        />
+        <meta
+          name="twitter:image"
+          content="https://matalogics.com/path/to/portfolio-og-image.jpg"
+        />
+      </Helmet>
       <section className="h-auto bg-[#FFF] flex flex-col items-center justify-center mobile:h-auto ">
         <div className="relative w-full h-[450px] ">
           <img

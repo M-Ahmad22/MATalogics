@@ -18,6 +18,7 @@ import MVP from "../../assets/MVP.svg";
 import Maintenance from "../../assets/Maintenance.svg";
 import Web from "../../assets/Web.svg";
 import TechAdvisory from "../../assets/TechAdvisory.svg";
+import { Helmet } from "react-helmet-async";
 
 const services = [
   {
@@ -169,6 +170,22 @@ const services = [
 const ServicesHover = () => {
   return (
     <>
+      <Helmet>
+        <title>MATalogics | Services</title>
+        <meta
+          name="description"
+          content="Explore MATalogics services and solutions for your business."
+        />
+        <meta property="og:title" content="MATalogics | Services" />
+        <meta
+          property="og:description"
+          content="Explore MATalogics services and solutions for your business."
+        />
+        <meta
+          property="og:image"
+          content="https://matalogics.com/path/to/services-og-image.jpg"
+        />
+      </Helmet>
       <section className="h-auto bg-[#FFF] mobile:w-full">
         <div className="relative w-full h-[450px] ">
           <img
