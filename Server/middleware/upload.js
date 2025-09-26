@@ -1,23 +1,20 @@
 const multer = require("multer");
-const path = require("path");
 const fs = require("fs");
-require("dotenv").config();
+const path = require("path");
 
-const uploadDir = process.env.UPLOAD_DIR;
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+const uploadPath = "/tmp/uploads";
+if (!fs.existsSync(uploadPath)) {
+  fs.mkdirSync(uploadPath, { recursive: true });
+}
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, uploadDir);
+    cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
-    cb(
-      null,
-      Date.now() + "-" + file.fieldname + path.extname(file.originalname)
-    );
+    cb(null, file.originalname);
   },
 });
 
 const upload = multer({ storage });
-
 module.exports = upload;
