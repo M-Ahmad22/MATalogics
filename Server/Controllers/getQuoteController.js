@@ -4,20 +4,21 @@ const getQuote = async (req, res) => {
   try {
     const {
       fullName,
-      Email,
-      PhoneNo,
+      email,
+      phoneNo,
       startUpName,
       service,
       budget,
       projectTimeline,
       projectDescription,
     } = req.body;
+
     const document = req.file ? req.file.path : null;
 
     const newQuote = new Quote({
       fullName,
-      Email,
-      PhoneNo,
+      email,
+      phoneNo,
       startUpName,
       service,
       budget,
@@ -27,7 +28,6 @@ const getQuote = async (req, res) => {
     });
 
     await newQuote.save();
-
     res.status(200).json({ message: "Quote request submitted successfully!" });
   } catch (error) {
     console.error(error);
@@ -44,4 +44,5 @@ const getAllQuotes = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
 module.exports = { getQuote, getAllQuotes };

@@ -1,9 +1,7 @@
 const multer = require("multer");
 const fs = require("fs");
-const path = require("path");
 
-// Use /tmp/uploads for serverless
-const uploadPath = "/tmp/uploads";
+const uploadPath = "/tmp/uploads"; // Vercel allows writing only to /tmp
 
 // Ensure /tmp/uploads exists
 if (!fs.existsSync(uploadPath)) {
@@ -11,13 +9,14 @@ if (!fs.existsSync(uploadPath)) {
 }
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
+  destination: (req, file, cb) => {
     cb(null, uploadPath);
   },
-  filename: function (req, file, cb) {
+  filename: (req, file, cb) => {
     cb(null, Date.now() + "-" + file.originalname);
   },
 });
 
 const upload = multer({ storage });
+
 module.exports = upload;

@@ -12,6 +12,7 @@ router.post(
   ]),
   applyJob
 );
+
 router.get("/job-applications", async (req, res) => {
   try {
     const apps = await Application.find().sort({ createdAt: -1 });
@@ -21,6 +22,7 @@ router.get("/job-applications", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
 router.patch("/job-applications/:id/read", async (req, res) => {
   try {
     const updated = await Application.findByIdAndUpdate(
@@ -28,12 +30,11 @@ router.patch("/job-applications/:id/read", async (req, res) => {
       { status: "read" },
       { new: true }
     );
-    if (!updated) {
-      return res.status(404).json({ message: "Not found" });
-    }
+    if (!updated) return res.status(404).json({ message: "Not found" });
     res.json(updated);
   } catch (err) {
     res.status(500).json({ message: "Error updating status" });
   }
 });
+
 module.exports = router;
