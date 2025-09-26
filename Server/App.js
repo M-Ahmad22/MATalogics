@@ -43,6 +43,22 @@ app.get("/", (req, res) => {
   res.send("Backend API is running.");
 });
 
+let isConnected;
+
+const connectDB = async () => {
+  if (isConnected) return;
+
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    isConnected = true;
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+connectDB();
+
 app.use("/api/request-pricing", requestPricingRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api", applicationRoutes);
