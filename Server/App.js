@@ -23,13 +23,13 @@ app.use(
 connectDB().then(() => console.log("MongoDB connected"));
 
 // ROUTES aligned with your frontend
-app.use("/api/applications", require("./Routes/applicationRoutes")); // /job-applications inside route
-app.use("/api/book-call", require("./Routes/bookCallRoutes")); // /book-call inside route
-app.use("/api/get-quote", require("./Routes/getQuoteRoutes")); // /get-quote inside route
-app.use("/api/request-pricing", require("./Routes/requestPricingRoutes")); // / request inside route
+// app.use("/api/applications", require("./Routes/applicationRoutes")); // /job-applications inside route
+// app.use("/api/book-call", require("./Routes/bookCallRoutes")); // /book-call inside route
+// app.use("/api/get-quote", require("./Routes/getQuoteRoutes")); // /get-quote inside route
+// app.use("/api/request-pricing", require("./Routes/requestPricingRoutes")); // / request inside route
 
 // Static uploads
-app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static("uploads"));
 
 // Root endpoint
 app.get("/", (req, res) => res.send("Backend API is running."));
