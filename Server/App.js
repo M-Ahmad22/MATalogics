@@ -1,8 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-const rateLimit = require("express-rate-limit");
-const { ipKeyGenerator } = require("express-rate-limit/lib/utils");
 const compression = require("compression");
 const connectDB = require("./db");
 
@@ -12,6 +10,7 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 app.use(compression());
+
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL, process.env.ADMIN_FRONTEND_URL],
@@ -21,18 +20,8 @@ app.use(
   })
 );
 
-app.use(
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100,
-    standardHeaders: true,
-    legacyHeaders: false,
-    keyGenerator: ipKeyGenerator,
-  })
-);
-
-// Connect DB once at the start
-connectDB().then(() => console.log("MongoDB connected"));
+// Connect to DB once at startup
+connectDB();
 
 // Routes
 app.use("/api/request-pricing", require("./Routes/requestPricingRoutes"));
@@ -40,8 +29,6 @@ app.use("/api/applications", require("./Routes/applicationRoutes"));
 app.use("/api", require("./Routes/bookCallRoutes"));
 app.use("/api", require("./Routes/getQuoteRoutes"));
 app.use("/api/auth", require("./Routes/authRoutes"));
-
-// Static uploads
 app.use("/uploads", express.static("uploads"));
 
 // Root route
