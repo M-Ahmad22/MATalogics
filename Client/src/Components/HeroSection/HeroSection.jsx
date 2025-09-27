@@ -13,6 +13,19 @@ import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  useEffect(() => {
+    // This sets a stable CSS var equal to the innerHeight at mount time
+    const setVh = () => {
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.innerHeight * 0.01}px`
+      );
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
+
   const texts = ["100+ Projects delivered", "50+ Happy Clients"];
   const [index, setIndex] = useState(0);
 
@@ -36,7 +49,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="w-full min-h-dvh relative overflow-hidden bg-cover bg-center bg-white">
+    // <section className="w-full min-h-dvh relative overflow-hidden bg-cover bg-center bg-white">
+    <section
+      className="w-full relative overflow-hidden bg-cover bg-center bg-white"
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+    >
       {/* Background poster + video */}
       <img
         src="/Videos/poster.jpg"
