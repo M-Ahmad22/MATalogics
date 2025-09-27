@@ -19,25 +19,19 @@ app.use(
   })
 );
 
-// Connect DB once on cold start
+// Connect to MongoDB once during cold start
 connectDB().then(() => console.log("MongoDB connected"));
 
-// Routes aligned with your frontend endpoints
-app.use("/api/request-pricing", require("./Routes/requestPricingRoutes")); // http://.../api/request-pricing
-app.use(
-  "/api/applications/job-applications",
-  require("./Routes/applicationRoutes")
-); // http://.../api/applications/job-applications
-app.use("/api/book-call", require("./Routes/bookCallRoutes")); // http://.../api/book-call
-app.use("/api/get-quote", require("./Routes/getQuoteRoutes")); // http://.../api/get-quote
-
-// Auth routes (if needed)
-app.use("/api/auth", require("./Routes/authRoutes"));
+// ROUTES aligned with your frontend
+app.use("/api/applications", require("./Routes/applicationRoutes")); // /job-applications inside route
+app.use("/api/book-call", require("./Routes/bookCallRoutes")); // /book-call inside route
+app.use("/api/get-quote", require("./Routes/getQuoteRoutes")); // /get-quote inside route
+app.use("/api/request-pricing", require("./Routes/requestPricingRoutes")); // / request inside route
 
 // Static uploads
 app.use("/uploads", express.static("uploads"));
 
-// Root route
+// Root endpoint
 app.get("/", (req, res) => res.send("Backend API is running."));
 
 module.exports = app;
