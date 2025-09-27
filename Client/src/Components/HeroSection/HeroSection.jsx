@@ -48,11 +48,11 @@ const HeroSection = () => {
   };
 
   return (
-    // <section className="w-full min-h-dvh relative overflow-hidden bg-cover bg-center bg-white">
-    <section
+    <section className="w-full mobile:h-[810px] relative overflow-hidden bg-cover bg-center bg-white ">
+      {/* <section
       className="w-full relative overflow-hidden bg-cover bg-center bg-white"
       style={{ height: heroHeight ? `${heroHeight}px` : "100vh" }}
-    >
+    > */}
       {/* Background poster + video */}
       <img
         src="/Videos/poster.jpg"
