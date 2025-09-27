@@ -272,7 +272,7 @@ const About = () => {
                 values and work culture fuel our commitment to excellence.
               </h2>
             </div>
-            <div className="h-auto w-[1305px] flex justify-center items-center flex-col  relative mobile:w-full mobile:flex-col mobile:h-[135vh] medium:w-full medium:flex  tablet:w-full tablet:flex ">
+            <div className="h-auto w-[1305px] flex justify-center items-center flex-col  relative mobile:w-full mobile:flex-col mobile:h-[145vh] medium:w-full medium:flex  tablet:w-full tablet:flex ">
               <div className="h-[255px] w-[435px] flex justify-center items-center absolute left-0 mobile:w-full  mobile:top-[200px] mobile:hidden medium:hidden tablet:hidden">
                 <img src={AboutBannerImg} alt="" className="" />
                 <div className="h-[255px] w-[435px] absolute left-[64px] top-[38px]  ">
@@ -294,7 +294,7 @@ const About = () => {
                 </div>
               </div>
               {/* mobile */}
-              <div className="hidden  mobile:flex mobile:justify-center mobile:items-center  mobile:w-[90%]  mobile:absolute mobile:top-[150px] tablet:flex ">
+              <div className="hidden  mobile:flex mobile:justify-center mobile:items-center mobile:h-[800px]  mobile:w-[90%]  mobile:absolute mobile:top-[150px] tablet:flex ">
                 <div className=" flex-col items-start gap-[24.376px] grid mobile:grid-cols-1 grid-cols-1 mt-10">
                   {AboutFeature.map((item, index) => (
                     <div
