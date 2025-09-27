@@ -48,7 +48,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="w-full mobile:h-[870px] relative overflow-hidden bg-cover bg-center bg-white ">
+    <section className="w-full mobile:h-[850px] relative overflow-hidden bg-cover bg-center bg-white ">
       {/* <section
       className="w-full relative overflow-hidden bg-cover bg-center bg-white"
       style={{ height: heroHeight ? `${heroHeight}px` : "100vh" }}
