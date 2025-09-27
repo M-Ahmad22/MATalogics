@@ -1,6 +1,3 @@
-const serverless = require("serverless-http");
-const app = require("../App");
-
-console.log("Serverless handler initialized");
-
-module.exports = serverless(app);
+const app = require("./Server/App");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));

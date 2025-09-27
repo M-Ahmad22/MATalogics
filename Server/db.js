@@ -1,21 +1,17 @@
-const express = require("express");
-const connectDB = require("./db");
+const mongoose = require("mongoose");
+let isConnected;
 
-const app = express();
+const connectDB = async () => {
+  if (isConnected) {
+    console.log("Using existing DB connection");
+    return;
+  }
+  await mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  isConnected = mongoose.connection.readyState;
+  console.log("MongoDB connected");
+};
 
-// Middlewares
-app.use(express.json());
-
-// Connect DB on cold start
-connectDB().then(() => console.log("MongoDB connected"));
-
-// Routes
-app.use("/api/applications", require("./Routes/applicationRoutes"));
-// ...other routes
-
-// Optional: Root endpoint
-app.get("/", (req, res) => {
-  res.send("Backend API is running.");
-});
-
-module.exports = app;
+module.exports = connectDB;
