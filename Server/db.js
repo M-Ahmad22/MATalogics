@@ -1,29 +1,16 @@
-const mongoose = require("mongoose");
+const express = require("express");
+const connectDB = require("./db");
 
-let cached = global.mongoose;
+const router = express.Router();
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
-async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
+router.get("/data", async (req, res) => {
+  try {
+    await connectDB(); // connect only when a request comes in
+    // your DB logic here
+    res.json({ message: "DB connected!" });
+  } catch (err) {
+    res.status(500).json({ error: "DB connection failed" });
   }
+});
 
-  if (!cached.promise) {
-    cached.promise = mongoose
-      .connect(process.env.MONGO_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      })
-      .then((mongoose) => {
-        return mongoose;
-      });
-  }
-
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
-
-module.exports = connectDB;
+module.exports = router;
