@@ -2,7 +2,7 @@ import React from "react";
 import BlogOne from "../../assets/BlogOne.png";
 import BlogTwoVideo from "../../assets/BlogTwoVideo.mp4";
 import BlogThree from "../../assets/BlogThree.png";
-import AvatarBlog from "../../assets/AvatarBlog.png";
+import AvatarBlog from "../../assets/MuhammadAhmadTahir.jpeg";
 import "./Card.jsx";
 import Card from "./Card.jsx";
 import { motion } from "framer-motion";
@@ -14,8 +14,8 @@ const BlogData = [
     Description:
       "Explore the growing trend of no-code and low-code development platforms that empower users to build software applications without extensive coding knowledge. Discuss the benefits of these platforms, such as faster development cycles, increased agility, and broader participation in software creation.",
     img: AvatarBlog,
-    name: "Tetyana Fedoriv",
-    post: "Competency Manager",
+    name: "Muhammad Ahmad Tahir",
+    post: "CEO & Founder",
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ const BlogData = [
     Description:
       "Examine the evolution of user interfaces beyond traditional screens and keyboards. Discuss emerging interface technologies such as voice recognition, gesture control, augmented reality (AR), and virtual reality (VR), and speculate on their impact on user experience and interaction design.",
     img: AvatarBlog,
-    name: "Tetyana Fedoriv",
-    post: "Competency Manager",
+    name: "Muhammad Ahmad Tahir",
+    post: "CEO & Founder",
   },
   {
     id: 3,
@@ -32,8 +32,8 @@ const BlogData = [
     Description:
       "Dive into the world of decentralised applications (DApps) built on blockchain technology. Explain how DApps differ from traditional applications, explore their potential advantages in terms of transparency, security, and censorship resistance, and highlight notable examples across various industries.",
     img: AvatarBlog,
-    name: "Tetyana Fedoriv",
-    post: "Competency Manager",
+    name: "Muhammad Ahmad Tahir",
+    post: "CEO & Founder",
   },
 ];
 const Blog = () => {

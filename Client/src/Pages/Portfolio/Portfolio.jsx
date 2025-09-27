@@ -15,6 +15,10 @@ import PortFolioFullImg from "../../assets/PortFolioFullImg.jpg";
 import LaptopLayeredImg from "../../assets/CRMLaptopLayeredImg.png";
 import CRMSpecialLayeredImg from "../../assets/CRMSpecialLayeredImg.png";
 import ECommerceSpecialLayeredImg from "../../assets/ECommerceSpecialLayeredImg.png";
+import EcommercePortfolio from "../../assets/EcommercePortfolio.jpg";
+import PortfolioSaas from "../../assets/PortfolioSaas.jpg";
+import PortfolioCRM from "../../assets/PortfolioCRM.jpg";
+
 import ArrowUp from "../../assets/Arrow-up-rightGray.svg";
 import checkSign from "../../assets/checkSign.svg";
 import { motion } from "framer-motion";
@@ -30,7 +34,7 @@ const portfolioProjects = [
     id: 1,
     type: "View CaseStudy",
     badge: "Regulatory & Compliance",
-    img: SaasLayeredImg,
+    img: PortfolioSaas,
     title: "Custom SaaS Platform",
     description:
       "End-to-end SaaS application with role-based access, advanced analytics, and seamless integrations for scaling business operations.",
@@ -45,7 +49,7 @@ const portfolioProjects = [
     id: 2,
     type: "View CaseStudy",
     badge: "Regulatory & Compliance",
-    img: ECommerceLayeredImg,
+    img: EcommercePortfolio,
     title: "E-Commerce Web Application",
     description:
       "Fully functional online store with secure payment gateway, inventory management, and personalized shopping experiences.",
@@ -55,8 +59,6 @@ const portfolioProjects = [
       "Automated order tracking",
     ],
     HoverImg: ECommerceFullImg,
-    SpecialImg: LaptopLayeredImg,
-    LayerSpecialImg: ECommerceSpecialLayeredImg,
   },
   {
     id: 3,
@@ -92,8 +94,8 @@ const portfolioProjects = [
     id: 5,
     type: "View CaseStudy",
     badge: "Regulatory & Compliance",
-    img: CRMLayeredImg,
-    title: "CRM & Client Management System",
+    img: PortfolioCRM,
+    title: "CRM System",
     description:
       "Custom CRM solution designed to manage leads, track client interactions, and generate performance reports.",
     highlights: [
@@ -102,8 +104,6 @@ const portfolioProjects = [
       "Custom reporting system",
     ],
     HoverImg: ECommerceFullImg,
-    SpecialImg: LaptopLayeredImg,
-    LayerSpecialImg: CRMSpecialLayeredImg,
   },
   {
     id: 6,

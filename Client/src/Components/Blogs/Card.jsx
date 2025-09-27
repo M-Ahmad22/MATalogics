@@ -17,11 +17,11 @@ const Card = ({ title, description, img, name, post, id }) => {
         <h2 className="absolute top-[90px] left-[9px]  font-outfit  text-[10.882px] font-[400] leading-[13.778px] tracking-[0.3px] w-[235.212px] mx-2 my-3 text-[#667085] ">
           {description}
         </h2>
-        <div className="absolute bottom-3 w-full h-[35.3px] flex justify-center items-center">
+        <div className="absolute bottom-3 w-full h-[35.3px] flex justify-center items-center bg-">
           <img
             src={img}
-            alt=""
-            className="h-[35.3px] w-[[35.3px]] rounded-[73.542px] mr-3 "
+            alt="Muhammad Ahmad Tahir - CEO & Founder MATalogics"
+            className="h-[48.3px] w-[45.3px] rounded-[73.542px] mr-3  "
           />
           <div className="w-[60%] flex flex-col justify-center items-start h-full mx-0 mr-7">
             <h1 className="font-outfit text-[11.882px] font-[600] leading-[14.778px] tracking-[0.2px] text-[#1D2939]">

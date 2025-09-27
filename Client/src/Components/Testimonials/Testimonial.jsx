@@ -3,54 +3,58 @@ import { motion } from "framer-motion";
 import TestOne from "../../assets/TestOne.svg";
 import TestTwo from "../../assets/TestTwo.svg";
 import TestThree from "../../assets/TestThree.svg";
+import TestData from "../../assets/TestData.jpg";
+import TestLina from "../../assets/TestLina.jpg";
+import TestSophia from "../../assets/TestSophia.jpg";
+import TestHassan from "../../assets/TestHassan.jpg";
 import QuoteImg from "../../assets/bxs_quote-left.svg";
 import Star from "../../assets/Star.svg";
 
 const testimonials = [
   {
-    name: "Sarah Malik",
-    role: "CTO, FutureTech Inc.",
+    name: "Ayesha Khan",
+    role: "CTO, NovaCore Systems",
     quote:
-      "Working with MATalogics was a game-changer. Their team delivered a scalable solution that exceeded our expectations. Communication and execution were flawless.",
+      "Partnering with MATalogics completely transformed our workflow. Their team delivered a powerful, scalable product beyond our vision. Every step was smooth and on point.",
     image: TestTwo,
     NoOfStars: 5,
     rating: "4.8",
   },
   {
-    name: "Ahmed Raza",
-    role: "Founder, Appfinity",
+    name: "Hassan Mirza",
+    role: "Founder, SecureSphere",
     quote:
-      "The real-time threat detection and automated response features have significantly reduced our risk exposure. We now feel more confident than ever about our data security posture.",
-    image: TestOne,
+      "Their live monitoring and instant mitigation tools have drastically cut our risks. We’re now operating with unmatched confidence in our security framework.",
+    image: TestHassan,
     NoOfStars: 4,
     rating: "4.9",
   },
   {
-    name: "Emily Zhao",
-    role: "Marketing Director, CloudIQ",
+    name: "Sophia Lin",
+    role: "Marketing Director, PixelNova",
     quote:
-      "Their AI and SEO expertise helped us double our website traffic in just 3 months. The team is responsive, professional, and results-driven.",
-    image: TestThree,
+      "With their AI-driven strategies and SEO mastery, our traffic exploded in just 3 months. The team is proactive, attentive, and truly focused on results.",
+    image: TestSophia,
     NoOfStars: 4,
     rating: "4.5",
   },
   {
-    name: "Ahmed Raza",
-    role: "Founder, Appfinity",
+    name: "Omar Shah",
+    role: "Product Lead, DataForge",
     quote:
-      "The real-time threat detection and automated response features have significantly reduced our risk exposure. We now feel more confident than ever about our data security posture.",
-    image: TestOne,
-    NoOfStars: 4,
+      "MATalogics gave us a seamless platform upgrade with zero downtime. Their professionalism and technical expertise blew us away at every stage of the project.",
+    image: TestData,
+    NoOfStars: 5,
     rating: "4.9",
   },
   {
-    name: "Emily Zhao",
-    role: "Marketing Director, CloudIQ",
+    name: "Lina Torres",
+    role: "Operations Head, CloudCrest",
     quote:
-      "Their AI and SEO expertise helped us double our website traffic in just 3 months. The team is responsive, professional, and results-driven.",
-    image: TestThree,
+      "We’ve never seen such dedication and innovation. The MATalogics team helped us streamline our processes and drive results faster than we imagined possible.",
+    image: TestLina,
     NoOfStars: 4,
-    rating: "4.5",
+    rating: "4.7",
   },
 ];
 
