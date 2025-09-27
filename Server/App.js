@@ -1,30 +1,17 @@
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const mongoSanitize = require("express-mongo-sanitize");
+const { ipKeyGenerator } = require("express-rate-limit/lib/utils");
 const compression = require("compression");
+const connectDB = require("./db");
+
 const app = express();
 
+// Middlewares
 app.use(helmet());
-
 app.use(express.json());
 app.use(compression());
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-});
-app.use(limiter);
-
-const requestPricingRoutes = require("./Routes/requestPricingRoutes");
-const applicationRoutes = require("./Routes/applicationRoutes");
-const bookingRoutes = require("./Routes/bookCallRoutes");
-const getQuoteRoutes = require("./Routes/getQuoteRoutes");
-const authRoutes = require("./Routes/authRoutes");
-
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL, process.env.ADMIN_FRONTEND_URL],
@@ -33,38 +20,31 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Mongo db connected"))
-  .catch((error) => console.log(error));
 
-app.get("/", (req, res) => {
-  res.send("Backend API is running.");
-});
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    standardHeaders: true,
+    legacyHeaders: false,
+    keyGenerator: ipKeyGenerator,
+  })
+);
 
-let isConnected;
+// Connect DB once at the start
+connectDB().then(() => console.log("MongoDB connected"));
 
-const connectDB = async () => {
-  if (isConnected) return;
+// Routes
+app.use("/api/request-pricing", require("./Routes/requestPricingRoutes"));
+app.use("/api/applications", require("./Routes/applicationRoutes"));
+app.use("/api", require("./Routes/bookCallRoutes"));
+app.use("/api", require("./Routes/getQuoteRoutes"));
+app.use("/api/auth", require("./Routes/authRoutes"));
 
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    isConnected = true;
-    console.log("MongoDB connected");
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-connectDB();
-
-app.use("/api/request-pricing", requestPricingRoutes);
+// Static uploads
 app.use("/uploads", express.static("uploads"));
-app.use("/api", applicationRoutes);
-app.use("/api", bookingRoutes);
-app.use("/api", getQuoteRoutes);
-app.use("/api/applications", applicationRoutes);
-app.use("/api/auth", authRoutes);
+
+// Root route
+app.get("/", (req, res) => res.send("Backend API is running."));
 
 module.exports = app;
