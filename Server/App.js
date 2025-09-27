@@ -6,10 +6,23 @@ const connectDB = require("./db");
 
 const app = express();
 
-// Middlewares
+// ===== MIDDLEWARE LOGGING =====
+console.log("Initializing middlewares...");
+
+app.use((req, res, next) => {
+  console.log(`[Request] ${req.method} ${req.url}`);
+  next();
+});
+
 app.use(helmet());
+console.log("Helmet applied");
+
 app.use(express.json());
+console.log("JSON parser applied");
+
 app.use(compression());
+console.log("Compression applied");
+
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL, process.env.ADMIN_FRONTEND_URL],
@@ -18,21 +31,43 @@ app.use(
     credentials: true,
   })
 );
+console.log("CORS applied");
 
-// Connect to MongoDB once during cold start
-connectDB().then(() => console.log("MongoDB connected"));
+// ===== DATABASE CONNECTION =====
+console.log("Connecting to MongoDB...");
+connectDB()
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection failed:", err));
 
-// ROUTES aligned with your frontend
-app.use("/api/applications", require("./Routes/applicationRoutes")); // /job-applications inside route
-app.use("/api/book-call", require("./Routes/bookCallRoutes")); // /book-call inside route
-app.use("/api/get-quote", require("./Routes/getQuoteRoutes")); // /get-quote inside route
-app.use("/api/request-pricing", require("./Routes/requestPricingRoutes")); // / request inside route
+// ===== ROUTES =====
+try {
+  console.log("Setting up routes...");
 
-// Static uploads
-// app.use("/uploads", express.static("uploads"));
+  app.use("/api/applications", require("./Routes/applicationRoutes"));
+  console.log("/api/applications route loaded");
 
-// Root endpoint
-app.get("/", (req, res) => res.send("Backend API is running."));
-app.get("/favicon.ico", (req, res) => res.status(204).end());
+  app.use("/api/book-call", require("./Routes/bookCallRoutes"));
+  console.log("/api/book-call route loaded");
+
+  app.use("/api/get-quote", require("./Routes/getQuoteRoutes"));
+  console.log("/api/get-quote route loaded");
+
+  app.use("/api/request-pricing", require("./Routes/requestPricingRoutes"));
+  console.log("/api/request-pricing route loaded");
+} catch (err) {
+  console.error("Error while loading routes:", err);
+}
+
+// ===== ROOT =====
+app.get("/", (req, res) => {
+  console.log("Root endpoint hit");
+  res.send("Backend API is running.");
+});
+
+// Prevent crashes on favicon
+app.get("/favicon.ico", (req, res) => {
+  console.log("Favicon requested");
+  res.status(204).end();
+});
 
 module.exports = app;

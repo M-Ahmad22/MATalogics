@@ -11,4 +11,6 @@
 const serverless = require("serverless-http");
 const app = require("./App");
 
+console.log("Serverless2 handler initialized");
+
 module.exports = serverless(app);
