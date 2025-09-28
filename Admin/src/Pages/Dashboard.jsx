@@ -52,11 +52,11 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // 🔹 Updated endpoints & token
+        // 🔹 Match your real endpoints
         const pricingRes = await axiosAuth.get(`/api/request-pricing`);
         const quoteRes = await axiosAuth.get(`/api/get-quote`);
         const jobsRes = await axiosAuth.get(`/api/apply/job-applications`);
-        const consultRes = await axiosAuth.get(`/api/book-call`);
+        const consultRes = await axiosAuth.get(`/api/book-call/book-call`);
 
         const allApplications = jobsRes.data || [];
 
@@ -109,6 +109,7 @@ const Dashboard = () => {
     try {
       let patchUrl = "";
 
+      // 🔹 Build PATCH URL based on section
       if (activeSection === "job-applications") {
         patchUrl = `/api/apply/job-applications/${itemId}/read`;
       } else if (activeSection === "request-pricing") {
@@ -116,7 +117,7 @@ const Dashboard = () => {
       } else if (activeSection === "get-quote") {
         patchUrl = `/api/get-quote/${itemId}/read`;
       } else if (activeSection === "consultations") {
-        patchUrl = `/api/book-call/${itemId}/read`;
+        patchUrl = `/api/book-call/book-call/${itemId}/read`;
       }
 
       if (patchUrl) {
