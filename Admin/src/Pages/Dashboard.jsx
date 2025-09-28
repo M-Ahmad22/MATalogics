@@ -46,6 +46,7 @@ const Dashboard = () => {
         const jobsRes = await axios.get(
           `${API_URL}/api/applications/job-applications`
         );
+
         const consultRes = await axios.get(`${API_URL}/api/book-call`);
 
         const allApplications = jobsRes.data || [];

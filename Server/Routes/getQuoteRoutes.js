@@ -2,12 +2,11 @@ const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/upload");
 const { getQuote, getAllQuotes } = require("../Controllers/getQuoteController");
-const Quote = require("../Models/Quote");
 
-router.post("/get-quote", upload.single("document"), getQuote);
-router.get("/get-quote", getAllQuotes);
+router.post("/", upload.single("document"), getQuote);
+router.get("/", getAllQuotes);
 
-router.patch("/get-quote/:id/read", async (req, res) => {
+router.patch("/:id/read", async (req, res) => {
   try {
     const updated = await Quote.findByIdAndUpdate(
       req.params.id,

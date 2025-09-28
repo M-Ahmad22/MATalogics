@@ -1,5 +1,8 @@
 const Quote = require("../Models/Quote");
+const cloudinary = require("../config/cloudinary");
+const streamifier = require("streamifier");
 
+// Create new quote
 const getQuote = async (req, res) => {
   try {
     const {
@@ -13,7 +16,25 @@ const getQuote = async (req, res) => {
       projectDescription,
     } = req.body;
 
-    const document = req.file ? req.file.path : null;
+    let documentUrl = null;
+
+    // Helper function to upload buffer to Cloudinary
+    const uploadToCloudinary = (fileBuffer, folder = "quotes") =>
+      new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          { resource_type: "auto", folder },
+          (error, result) => {
+            if (error) return reject(error);
+            resolve(result.secure_url);
+          }
+        );
+        streamifier.createReadStream(fileBuffer).pipe(stream);
+      });
+
+    // Upload file if provided
+    if (req.file) {
+      documentUrl = await uploadToCloudinary(req.file.buffer);
+    }
 
     const newQuote = new Quote({
       fullName,
@@ -24,7 +45,7 @@ const getQuote = async (req, res) => {
       budget,
       projectTimeline,
       projectDescription,
-      document,
+      document: documentUrl,
     });
 
     await newQuote.save();
@@ -35,6 +56,7 @@ const getQuote = async (req, res) => {
   }
 };
 
+// Get all quotes
 const getAllQuotes = async (req, res) => {
   try {
     const quotes = await Quote.find().sort({ createdAt: -1 });

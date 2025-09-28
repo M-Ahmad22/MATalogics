@@ -16,7 +16,8 @@ const bookCall = async (req, res) => {
       !email ||
       !projectBrief ||
       !selectedDate ||
-      !selectedTime
+      !selectedTime ||
+      !timezone
     ) {
       return res.status(400).json({ message: "All fields are required." });
     }
@@ -31,8 +32,7 @@ const bookCall = async (req, res) => {
     });
 
     await newBooking.save();
-
-    return res.status(200).json({ message: "Your meeting has been booked!" });
+    return res.status(200).json({ message: "Meeting booked successfully!" });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: "Server error. Try again." });
