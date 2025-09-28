@@ -1,0 +1,5 @@
+http://localhost:3000/api/apply/job-applications
+http://localhost:3000/api/book-call/book-call
+http://localhost:3000/api/request-pricing
+http://localhost:3000/api/get-quote
+http://localhost:3000/api/auth/users
