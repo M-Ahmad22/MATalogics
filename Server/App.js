@@ -11,9 +11,25 @@ const authRoutes = require("./Routes/authRoutes");
 
 const app = express();
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.ADMIN_FRONTEND_URL,
+  "https://www.matalogics.com",
+  "https://matalogics-admin.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, process.env.ADMIN_FRONTEND_URL],
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like Postman or server-to-server)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
