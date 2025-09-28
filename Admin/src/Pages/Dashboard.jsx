@@ -23,6 +23,17 @@ const Dashboard = () => {
     internships: [],
   });
 
+  // 🔹 Grab token once
+  const token = localStorage.getItem("token");
+
+  // Axios instance with Authorization header
+  const axiosAuth = axios.create({
+    baseURL: API_URL,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
   // Reset selected item when section changes
   useEffect(() => {
     setSelectedItem(null);
@@ -33,7 +44,7 @@ const Dashboard = () => {
     if (activeSection !== "analytics") {
       const current = submissions[activeSection] || [];
       if (current.length > 0 && !selectedItem) {
-        setSelectedItem(current[0]._id); // ✅ use _id
+        setSelectedItem(current[0]._id);
       }
     }
   }, [activeSection, selectedItem, submissions]);
@@ -41,25 +52,23 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const pricingRes = await axios.get(`${API_URL}/api/request-pricing`);
-        const quoteRes = await axios.get(`${API_URL}/api/get-quote`);
-        const jobsRes = await axios.get(
-          `${API_URL}/api/applications/job-applications`
-        );
-
-        const consultRes = await axios.get(`${API_URL}/api/book-call`);
+        // 🔹 Updated endpoints & token
+        const pricingRes = await axiosAuth.get(`/api/request-pricing`);
+        const quoteRes = await axiosAuth.get(`/api/get-quote`);
+        const jobsRes = await axiosAuth.get(`/api/apply/job-applications`);
+        const consultRes = await axiosAuth.get(`/api/book-call`);
 
         const allApplications = jobsRes.data || [];
 
-        // ✅ Split by jobId now
+        // Split jobs vs internships
         const internships = allApplications.filter((app) => {
           const id = Number(app.jobId);
-          return !isNaN(id) && id >= 100; // Internship
+          return !isNaN(id) && id >= 100;
         });
 
         const jobs = allApplications.filter((app) => {
           const id = Number(app.jobId);
-          return !isNaN(id) && id < 100; // Job
+          return !isNaN(id) && id < 100;
         });
 
         const addStatus = (arr) =>
@@ -80,7 +89,7 @@ const Dashboard = () => {
     };
 
     fetchData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
@@ -101,17 +110,17 @@ const Dashboard = () => {
       let patchUrl = "";
 
       if (activeSection === "job-applications") {
-        patchUrl = `${API_URL}/api/applications/job-applications/${itemId}/read`;
+        patchUrl = `/api/apply/job-applications/${itemId}/read`;
       } else if (activeSection === "request-pricing") {
-        patchUrl = `${API_URL}/api/request-pricing/${itemId}/read`;
+        patchUrl = `/api/request-pricing/${itemId}/read`;
       } else if (activeSection === "get-quote") {
-        patchUrl = `${API_URL}/api/get-quote/${itemId}/read`;
+        patchUrl = `/api/get-quote/${itemId}/read`;
       } else if (activeSection === "consultations") {
-        patchUrl = `${API_URL}/api/book-call/${itemId}/read`;
+        patchUrl = `/api/book-call/${itemId}/read`;
       }
 
       if (patchUrl) {
-        await axios.patch(patchUrl);
+        await axiosAuth.patch(patchUrl);
       }
     } catch (err) {
       console.error("Error updating status on backend:", err);
@@ -150,7 +159,6 @@ const Dashboard = () => {
     );
   }
 
-  // Show register page
   if (activeSection === "register") {
     return (
       <div className="h-screen flex flex-col bg-[#ffffff]">
