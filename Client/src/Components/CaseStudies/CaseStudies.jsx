@@ -116,7 +116,7 @@ const PortfolioSection = () => {
   return (
     <section
       id="PortfolioSection"
-      className="w-full h-[130vh] bg-[#FFFFFF] flex justify-center items-center mt-[120px] mb-[100px] mobile:h-auto tablet:h-auto medium::h-auto large::h-auto mobile:mt-[30px] "
+      className="w-full h-[130vh] bg-[#FFFFFF] flex justify-center items-center mt-[120px] mb-[100px] mobile:h-auto tablet:h-auto medium::h-auto large:h-auto large:mt-[150px] mobile:mt-[30px] "
     >
       <motion.div
         initial={{ opacity: 0, y: 150 }}

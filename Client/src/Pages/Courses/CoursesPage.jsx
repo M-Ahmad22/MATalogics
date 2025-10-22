@@ -37,8 +37,8 @@ const courses = [
     title: "Full Stack Web Development",
     description:
       "Master modern web development with React, Node.js, and cloud deployment strategies.",
-    price: "27000 RS",
-    originalPrice: "35000 RS",
+    price: "17000 RS",
+    originalPrice: "25000 RS",
     duration: "12 weeks",
     level: "Advanced",
     students: "2,847",
@@ -67,8 +67,8 @@ const courses = [
     title: "AI & Machine Learning Specialist",
     description:
       "Dive deep into AI algorithms, neural networks, and practical ML implementations.",
-    price: "26000 RS",
-    originalPrice: "35000 RS",
+    price: "17000 RS",
+    originalPrice: "25000 RS",
     duration: "12 weeks",
     level: "Advanced",
     students: "1,243",
@@ -97,8 +97,8 @@ const courses = [
     title: "Agentic Ai Specialist",
     description:
       "Build cross-platform mobile applications with React Native and Flutter.",
-    price: "25000 RS",
-    originalPrice: "35000 RS",
+    price: "15000 RS",
+    originalPrice: "25000 RS",
     duration: "10 weeks",
     level: "Advance",
     students: "3,156",
