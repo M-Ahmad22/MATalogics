@@ -73,7 +73,7 @@ const HeroSection = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative z-30 max-w-full mx-auto px-[160px] py-[20px] flex flex-col lg:flex-row items-center justify-between min-h-dvh mobile:w-full mobile:px-5 tablet:w-full tablet:px-5 medium:w-full medium:px-5 large:w-full tablet:mt-[130px] large:px-5 pb-[160px] mobile:mt-[120px]">
+      <div className="relative z-30 max-w-full mx-auto px-[160px] py-[20px] flex flex-col lg:flex-row items-center justify-between min-h-dvh mobile:w-full mobile:px-5 tablet:w-full tablet:px-5 medium:w-full medium:px-5 large:w-full tablet:mt-[130px] large:mt-[130px] large:px-5 pb-[160px] mobile:mt-[120px]">
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
@@ -183,7 +183,7 @@ const HeroSection = () => {
 
           {/* Active Clients */}
           <div
-            className="flex items-center justify-center gap-4 py-6 relative mobile:py-0"
+            className="flex items-center justify-center gap-4 py-6 relative mobile:py-0 tablet:justify-start tablet:ml-[35px]"
             ref={InfoRef}
           >
             <img
